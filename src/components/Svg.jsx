@@ -36,8 +36,15 @@ function SvgComponent(props) {
     <div className="relative">
       {showImage && image && (
         <div>
-          <img src={image} alt="" style={imageStyle} />
-          <p style={locationStyle} className="text-white mt-5">{location}</p>
+          <img
+            src={image}
+            alt=""
+            style={imageStyle}
+            onClick={() => alert("her")}
+          />
+          {/* <p style={locationStyle} className="text-white mt-5">
+            {location}
+          </p> */}
         </div>
       )}
       <svg
@@ -238,7 +245,7 @@ function SvgComponent(props) {
             fill="#D67D28"
           />
           <path
-            onClick={handleMouseover}
+            onMouseOver={handleMouseover}
             className="cursor-pointer"
             d="M602.298 710.488l40.667-233.144-103.001 82.02 62.334 151.124z"
             fill="#CD7A29"
@@ -380,7 +387,7 @@ function SvgComponent(props) {
             fill="#407B92"
           />
           <path
-            onClick={handleMouseover}
+            onMouseOver={handleMouseover}
             pointerEvents="visible"
             className=" cursor-pointer"
             d="M145.051 498h1.938c.387.064.775.112 1.162.193 3.488.691 6.208 2.531 8.073 5.552 1.865 3.013 2.228 6.251 1.251 9.626-.581 2.017-1.622 3.833-2.761 5.576-2.187 3.343-4.956 6.171-8.016 8.718-.46.386-.968.362-1.437-.032a45.115 45.115 0 01-4.383-4.138c-2.357-2.555-4.351-5.343-5.764-8.533-.63-1.39-1.025-2.836-1.098-4.363-.121-2.306.355-4.492 1.534-6.492 1.913-3.279 4.755-5.271 8.517-5.938l.984-.169zm.945 17.886c3.205 0 5.812-2.603 5.812-5.801s-2.591-5.786-5.812-5.802c-3.205-.024-5.845 2.612-5.828 5.818a5.819 5.819 0 005.828 5.785z"
@@ -423,7 +430,7 @@ function SvgComponent(props) {
             fill="#8D191B"
           />
           <path
-            onClick={handleMouseover}
+            onMouseOver={handleMouseover}
             className="cursor-pointer"
             d="M474 339h2.81c.56.09 1.13.17 1.68.28 5.06 1.01 8.99 3.68 11.69 8.07 2.69 4.39 3.22 9.1 1.81 14.01-.84 2.93-2.35 5.57-4 8.11-3.17 4.86-7.17 8.98-11.61 12.69-.66.56-1.4.53-2.08-.04-2.24-1.88-4.37-3.87-6.35-6.02-3.42-3.71-6.3-7.78-8.35-12.42-.9-2.03-1.46-4.13-1.58-6.35-.17-3.36.52-6.54 2.22-9.45 2.78-4.76 6.89-7.66 12.34-8.63.48-.08.95-.16 1.43-.25m1.37 26.02c4.65-.01 8.42-3.79 8.42-8.44 0-4.65-3.75-8.41-8.42-8.44-4.64-.03-8.46 3.8-8.44 8.46.02 4.66 3.8 8.43 8.44 8.42z"
             fill="#C52126"
