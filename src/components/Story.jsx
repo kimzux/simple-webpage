@@ -14,16 +14,16 @@ function Fact() {
            <h1 className='text-2xl font-giz text-red-700 text-start mx-10 mt-10 md:mx-20'>Our Success Stories</h1>
            <div class="mx-10 mt-5 md:mx-20">
             <div className='flex flex-col gap-5  md:flex-row'>
-            <img src={MapImg1} alt="my profile" className="cursor-pointer" />
-            <img src={MapImg2} alt="my profile" className="cursor-pointer" />
-            <img src={MapImg3} alt="my profile" className="cursor-pointer" />
-            <img src={MapImg4} alt="my profile" className="cursor-pointer" />
+            <img src={MapImg1} alt="my profile" className="cursor-pointer object-cover w-full" />
+            <img src={MapImg2} alt="my profile" className="cursor-pointer object-cover w-full" />
+            <img src={MapImg3} alt="my profile" className="cursor-pointer object-cover w-full" />
+            <img src={MapImg4} alt="my profile" className="cursor-pointer object-cover w-full" />
             </div>
             <div className='flex flex-col gap-5 mt-5 md:flex-row w-full'>
-            <img src={MapImg5} alt="my profile" className="cursor-pointer" />
-            <img src={MapImg6} alt="my profile" className="cursor-pointer" />
-            <img src={MapImg7} alt="my profile" className="cursor-pointer" />
-            <img src={MapImg8} alt="my profile" className="cursor-pointer" />
+            <img src={MapImg5} alt="my profile" className="cursor-pointer  object-cover w-full" />
+            <img src={MapImg6} alt="my profile" className="cursor-pointer  object-cover w-full" />
+            <img src={MapImg7} alt="my profile" className="cursor-pointer  object-cover w-full" />
+            <img src={MapImg8} alt="my profile" className="cursor-pointer object-cover w-full" />
             </div>
             </div>
           
