@@ -1,10 +1,9 @@
-import * as React from "react"
+import * as React from "react";
 
 function SvgComponent(props) {
   return (
-    
     <svg
-      width={810}
+      width={753}
       height={753}
       viewBox="0 0 810 753"
       fill="none"
@@ -507,7 +506,7 @@ function SvgComponent(props) {
         </clipPath>
       </defs>
     </svg>
-  )
+  );
 }
 
-export default SvgComponent
+export default SvgComponent;
