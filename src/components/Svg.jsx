@@ -97,21 +97,21 @@ function SvgComponent(props) {
     <div className="relative">
       {showImage && location && (
         <div
-          class="max-w-xs pb-5 px-4 rounded-lg overflow-hidden shadow-lg bg-white"
+          class="max-w-xs pb-5 px-2 rounded-lg overflow shadow-lg bg-white md:overflow-hidden md:px-4"
           style={imageStyle}
         >
           <div class="p-4">
-            <div className={`${location.text} font-giz text-2xl mb-2`}>
+            <div className={`${location.text} font-giz text-base mb-2 md:text-2xl`}>
               {location.title}
             </div>
-            <p className="text-gray-500 font-giz text-base">
+            <p className="text-gray-500 font-giz text-sm md:text-base">
               {location.content}
             </p>
           </div>
-          <div className=" px-4 py-2">
+          <div className=" p-2">
             <a
               href={location.link}
-              className={`${location.color} hover:bg-blue-300  text-white  text-sm px-16 py-2 rounded`}
+              className={`${location.color} hover:bg-blue-300  text-white  text-sm px-4 py-2 rounded md:px-16`}
             >
               View more
             </a>
@@ -121,47 +121,47 @@ function SvgComponent(props) {
       {showDar && (
         <div className="relative">
           <div
-            class="bg-white rounded-lg shadow-lg p-4  w-1/3 absolute top-[50%] translate-x-[-50%] translate-y-[-50%]"
+            class="bg-white rounded-lg shadow-lg p-4  w-[70%] absolute top-[50%] translate-x-[-50%] translate-y-[-50%] md:w-1/3"
             style={imageStyle}
           >
             <div class="border-b border-gray-200 pb-4 ">
-              <h3 class="text-2xl font-medium  font-giz mb-2 text-[#349B89]">
+              <h3 class="font-giz text-base mb-2 md:text-2xl text-[#349B89]">
                 Health
               </h3>
-              <p class="text-gray-500 font-giz text-base">
+              <p class="text-gray-500 font-giz text-sm md:text-base">
                 Improving Health care provision
               </p>
               <a
                 href="https://www.giz.de/en/worldwide/27933.html"
-                class="mt-2 inline-block bg-[#349B89] hover:bg-blue-500 text-white text-sm px-16 py-2 rounded"
+                class="mt-2 inline-block bg-[#349B89] hover:bg-blue-500 text-white text-sm px-4 py-2 rounded md:px-16"
               >
                 View more
               </a>
             </div>
             <div class="border-b border-gray-200 py-4">
-              <h3 class="text-2xl font-medium  font-giz mb-2 text-[#28448F]">
+              <h3 class="font-giz text-base mb-2 md:text-2xl text-[#28448F]">
                 Good governance Human Right and Gender
               </h3>
-              <p class="text-gray-500 font-giz text-base">
+              <p class="text-gray-500 font-giz text-sm md:text-base">
                 Promoting good financial governance promiting access to justice for women and girls
               </p>
               <a
                 href="https://www.giz.de/en/worldwide/27933.html"
-                class="mt-2 inline-block bg-[#28448F] hover:bg-blue-500 text-white text-sm px-16 py-2 rounded"
+                class="mt-2 inline-block bg-[#28448F] hover:bg-blue-500 text-white text-sm px-4 py-2 rounded md:px-16"
               >
                 View more
               </a>
             </div>
             <div class="py-4">
-            <h3 class="text-2xl font-medium  font-giz mb-2 text-[#DF3292]">
+            <h3 class="font-giz text-base mb-2 md:text-2xl text-[#DF3292]">
                  Decent Jobs, Economic Growth and Trade
               </h3>
-              <p class="text-gray-500 font-giz text-base">
+              <p class="text-gray-500 font-giz text-sm md:text-base">
                 Promoting employment for development Business Scope
               </p>
               <a
                 href="https://www.giz.de/en/worldwide/27933.html"
-                class="mt-2 inline-block bg-[#DF3292] hover:bg-blue-500 text-white text-sm px-16 py-2 rounded"
+                class="mt-2 inline-block bg-[#DF3292] hover:bg-blue-500 text-white text-sm px-4 py-2 rounded md:px-16"
               >
                 View more
               </a>
@@ -172,33 +172,33 @@ function SvgComponent(props) {
         {showTanga && (
         <div className="relative">
           <div
-            class="bg-white rounded-lg shadow-lg p-4  w-1/3 absolute top-[50%] translate-x-[-50%] translate-y-[-50%]"
+            class="bg-white rounded-lg shadow-lg p-4 w-[70%] absolute top-[50%] translate-x-[-50%] translate-y-[-50%] md:w-1/3 "
             style={imageStyle}
           >
             <div class="border-b border-gray-200 pb-4 ">
-              <h3 class="text-2xl font-medium  font-giz mb-2 text-[#349B89]">
+              <h3 class="font-giz text-base mb-2 md:text-2xl text-[#349B89]">
                 Health
               </h3>
-              <p class="text-gray-500 font-giz text-base">
+              <p class="text-gray-500 font-giz text-sm md:text-base">
                 Improving Health care provision
               </p>
               <a
                 href="https://www.giz.de/en/worldwide/81106.html"
-                class="mt-2 inline-block bg-[#349B89] hover:bg-blue-500 text-white text-sm px-16 py-2 rounded"
+                class="mt-2 inline-block bg-[#349B89] hover:bg-blue-500 text-white text-sm px-4 py-2 rounded md:px-16"
               >
                 View more
               </a>
             </div>
             <div class="border-b border-gray-200 py-4">
-              <h3 class="text-2xl font-medium  font-giz mb-2 text-[#28448F]">
+              <h3 class="font-giz text-base mb-2 md:text-2xl text-[#28448F]">
                 Good governance 
               </h3>
-              <p class="text-gray-500 font-giz text-base">
+              <p class="text-gray-500 font-giz text-sm md:text-base">
                 Promoting good financial governance 
               </p>
               <a
                 href="https://www.giz.de/en/worldwide/115017.html"
-                class="mt-2 inline-block bg-[#28448F] hover:bg-blue-500 text-white text-sm px-16 py-2 rounded"
+                class="mt-2 inline-block bg-[#28448F] hover:bg-blue-500 text-white text-sm px-4 py-2 rounded md:px-16"
               >
                 View more
               </a>
