@@ -1,19 +1,46 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+
+const cards = [
+  {
+    id: 1,
+    title: "Lake Rukwa",
+    content: "Water Resource Management",
+    link: "https://via.placeholder.com/150",
+    color: "bg-[#6DCFF6] ",
+    text: "text-[#6DCFF6]",
+  },
+  {
+    id: 2,
+    title: "Selous Game Reserve",
+    content: "Mitigation of Human-wildlife conflict",
+    link: "https://www.giz.de/en/worldwide/119189.html",
+    color: "bg-[#99B544]",
+    text: "text-[#99B544]",
+  },
+  {
+    id: 3,
+    title: "GIZ EAC Cluster",
+    content: "Support to the East African Community",
+    link: "https://www.giz.de/en/worldwide/115017.html",
+    color: "bg-[#C52126]",
+    text: "text-[#C52126]",
+  },
+];
 
 function SvgComponent(props) {
   const [showImage, setShowImage] = useState(false);
   const [location, setLocation] = useState(null);
   const [showDar, setShowDar] = useState(false);
+  const [showTanga, setShowTanga] = useState(false);
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
 
   const handleMouseover = (e, id) => {
     setShowImage(true);
     let card = cards.find((item) => item.id === id);
     setLocation(card);
 
-    let x = e.clientX * 0.5;
+    let x = e.clientX * 0.4;
     let y = e.clientY;
     setMousePosition({ x: x, y: y });
   };
@@ -29,58 +56,42 @@ function SvgComponent(props) {
 
   const handleCursorOver = (e) => {
     setShowDar(true);
-    
+    let x = e.clientX * 0.95;
+    let y = e.clientY;
+    setMousePosition({ x: x, y: y });
   };
-  
+
+  const handleTangaOver = (e) => {
+    setShowTanga(true);
+    let x = e.clientX * 0.9;
+    let y = e.clientY;
+    setMousePosition({ x: x, y: y });
+  };
+
  
-  // const handleCursorLeave =() =>{
-  //   setShowDar(false);
-  // }
-  const cards = [
-    {
-      id: 1,
-      title: "Lake Rukwa",
-      content: "Water Resource Management",
-      link: "https://via.placeholder.com/150",
-      color: "bg-[#6DCFF6] ",
-      text: "text-[#6DCFF6]",
-    },
-    {
-      id: 2,
-      title: "Selous Game Reserve",
-      content: "Mitigation of Human-wildlife conflict",
-      link: "https://www.giz.de/en/worldwide/119189.html",
-      color: "bg-[#99B544]",
-      text: "text-[#99B544]",
-    },
-    {
-      id: 3,
-      title: "GIZ EAC Cluster",
-      content: "Support to the East African Community",
-      link: "https://www.giz.de/en/worldwide/115017.html",
-      color: "bg-[#C52126]",
-      text: "text-[#C52126]",
-    },
-    {
-      id: 4,
-      children: [
-        { title: 'health', content: 'improve health care provision', link: 'https://www.giz.de/en/worldwide/115017.html' , color:"bg-[#349B89]", text:"text-[#349B89]" },
-        { title: 'Good', content: 'Child Content 2', link: 'https://www.giz.de/en/worldwide/115017.html' , color:"bg-[#349B89]", text:"text-[#349B89]" },
-        { title: 'Child Title 3', content: 'Child Content 3', link: 'https://www.giz.de/en/worldwide/115017.html' , color:"bg-[#349B89]", text:"text-[#349B89]" },
-      ],
+
+  useEffect(() => {
+    if (showImage) {
+      setShowDar(false);
+      setShowTanga(false);
     }
-   
-  ];
-  const renderChildren = (children) => {
-    if (!children) return null;
-    return children.map((child, index) => (
-      <div key={index}>
-        <h4>{child.title}</h4>
-        <p>{child.content}</p>
-        <a href={child.link}>Read More</a>
-      </div>
-    ));
-  };
+  }, [showImage]);
+
+  useEffect(() => {
+    if (showDar) {
+      setShowImage(false);
+      setShowTanga(false);
+    }
+  }, [showDar]);
+
+  useEffect(() => {
+    if (showTanga) {
+      setShowImage(false);
+      setShowDar(false);
+    }
+  }, [showTanga]);
+
+
 
   return (
     <div className="relative">
@@ -109,38 +120,90 @@ function SvgComponent(props) {
       )}
       {showDar && (
         <div className="relative">
-        <div class="bg-white rounded-lg shadow-lg p-4 absolute top-[50%] translate-x-[-50%] translate-y-[-50%]" style={imageStyle}>
-          <div class="border-b border-gray-200 pb-4">
-            <h3 class="text-lg font-medium text-gray-900 mb-2">Title 1</h3>
-            <p class="text-gray-700">Content 1</p>
-            <a
-              href="/"
-              class="mt-2 inline-block bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg"
-            >
-              Button 1
-            </a>
-          </div>
-          <div class="border-b border-gray-200 py-4">
-            <h3 class="text-lg font-medium text-gray-900 mb-2">Title 2</h3>
-            <p class="text-gray-700">Content 2</p>
-            <a
-              href="/"
-              class="mt-2 inline-block bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg"
-            >
-              Button 2
-            </a>
-          </div>
-          <div class="py-4">
-            <h3 class="text-lg font-medium text-gray-900 mb-2">Title 3</h3>
-            <p class="text-gray-700">Content 3</p>
-            <a
-              href="/"
-              class="mt-2 inline-block bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg"
-            >
-              Button 3
-            </a>
+          <div
+            class="bg-white rounded-lg shadow-lg p-4  w-1/3 absolute top-[50%] translate-x-[-50%] translate-y-[-50%]"
+            style={imageStyle}
+          >
+            <div class="border-b border-gray-200 pb-4 ">
+              <h3 class="text-2xl font-medium  font-giz mb-2 text-[#349B89]">
+                Health
+              </h3>
+              <p class="text-gray-500 font-giz text-base">
+                Improving Health care provision
+              </p>
+              <a
+                href="https://www.giz.de/en/worldwide/27933.html"
+                class="mt-2 inline-block bg-[#349B89] hover:bg-blue-500 text-white text-sm px-16 py-2 rounded"
+              >
+                View more
+              </a>
+            </div>
+            <div class="border-b border-gray-200 py-4">
+              <h3 class="text-2xl font-medium  font-giz mb-2 text-[#28448F]">
+                Good governance Human Right and Gender
+              </h3>
+              <p class="text-gray-500 font-giz text-base">
+                Promoting good financial governance promiting access to justice for women and girls
+              </p>
+              <a
+                href="https://www.giz.de/en/worldwide/27933.html"
+                class="mt-2 inline-block bg-[#28448F] hover:bg-blue-500 text-white text-sm px-16 py-2 rounded"
+              >
+                View more
+              </a>
+            </div>
+            <div class="py-4">
+            <h3 class="text-2xl font-medium  font-giz mb-2 text-[#DF3292]">
+                 Decent Jobs, Economic Growth and Trade
+              </h3>
+              <p class="text-gray-500 font-giz text-base">
+                Promoting employment for development Business Scope
+              </p>
+              <a
+                href="https://www.giz.de/en/worldwide/27933.html"
+                class="mt-2 inline-block bg-[#DF3292] hover:bg-blue-500 text-white text-sm px-16 py-2 rounded"
+              >
+                View more
+              </a>
+            </div>
           </div>
         </div>
+      )}
+        {showTanga && (
+        <div className="relative">
+          <div
+            class="bg-white rounded-lg shadow-lg p-4  w-1/3 absolute top-[50%] translate-x-[-50%] translate-y-[-50%]"
+            style={imageStyle}
+          >
+            <div class="border-b border-gray-200 pb-4 ">
+              <h3 class="text-2xl font-medium  font-giz mb-2 text-[#349B89]">
+                Health
+              </h3>
+              <p class="text-gray-500 font-giz text-base">
+                Improving Health care provision
+              </p>
+              <a
+                href="https://www.giz.de/en/worldwide/81106.html"
+                class="mt-2 inline-block bg-[#349B89] hover:bg-blue-500 text-white text-sm px-16 py-2 rounded"
+              >
+                View more
+              </a>
+            </div>
+            <div class="border-b border-gray-200 py-4">
+              <h3 class="text-2xl font-medium  font-giz mb-2 text-[#28448F]">
+                Good governance 
+              </h3>
+              <p class="text-gray-500 font-giz text-base">
+                Promoting good financial governance 
+              </p>
+              <a
+                href="https://www.giz.de/en/worldwide/115017.html"
+                class="mt-2 inline-block bg-[#28448F] hover:bg-blue-500 text-white text-sm px-16 py-2 rounded"
+              >
+                View more
+              </a>
+            </div>
+          </div>
         </div>
       )}
       <svg
@@ -269,7 +332,6 @@ function SvgComponent(props) {
           />
           <path
             onMouseOver={(event) => handleMouseover(event, 3)}
-           
             className="cursor-pointer"
             pointerEvents="visible"
             d="M359.237 190.098l.747-.976 1.572-1.044.764-2.011 6.982.467 6.463-2.656 5.02-4.107 5.045-4.438 1.393-.908 1.376-1.077.629-1.222.628-1.205 3.066-2.741 3.084-.314 1.562 3.224.952 3.369-1.759 2.172-2.87.993-.213.832-.543.899-1.325.501-1.206.653-.06 2.512 1.801.747-1.631 2.155-2.208 2.053-1.521.442-1.342.534-1.078 1.434-1.266 1.061-3.015.501-2.964.84-1.691.195-1.766-.009-1.775.696-1.742.806-3.329 1.239-2.005.942 33.176 37.666 28.029-47.569-.051-.144.128-2.07.951-.959.96-.942.042-1.145-.042-1.163 1.257-4.107 1.843-3.182 1.911-.424 1.614-1.188.323.153 41.423-70.302-13.089-7.263-12.248-6.797.298.255 1.053 5.583-1.368 5.227-.637 1.35-.467 1.416.085 2.011-.025 1.833-.595.984-.883.883-.493 1.111.051 1.231-1.248 2.622-1.47 2.359-2.429.653-2.565.102-1.401-1.824 1.104-2.775 1.444-1.689 2.692.162 1.053 1.705 1.478-1.688-.297-2.869-2.234-2.129-1.495-4.735-.025-5.219-.918-5.507 2.871-4.242.162-.28-1.325-.739-120.72 65.872 36.302 41.214z"
@@ -517,6 +579,9 @@ function SvgComponent(props) {
             fill="#28403C"
           />
           <path
+          onMouseOver={handleTangaOver}
+          className="cursor-pointer"
+          pointerEvents="visible"
             d="M625.591 265h1.857c.371.06.742.106 1.114.181 3.342.657 5.949 2.378 7.736 5.216 1.787 2.83 2.135 5.872 1.199 9.042-.557 1.888-1.555 3.593-2.646 5.239-2.096 3.14-4.75 5.797-7.682 8.19-.441.354-.928.339-1.377-.023a45.304 45.304 0 01-4.209-3.887c-2.259-2.401-4.169-5.02-5.523-8.016-.596-1.314-.975-2.672-1.045-4.107-.116-2.166.341-4.219 1.47-6.106 1.834-3.072 4.557-4.944 8.162-5.57l.944-.159zm.905 16.802c3.079 0 5.57-2.446 5.57-5.45s-2.483-5.434-5.57-5.449c-3.071-.023-5.601 2.453-5.586 5.464.016 3.005 2.515 5.443 5.586 5.435z"
             fill="#349B89"
           />
@@ -569,7 +634,7 @@ function SvgComponent(props) {
             fill="#8D191B"
           />
           <path
-            // onMouseOver={handleCursorOver}
+            onMouseOver={handleCursorOver}
             className="cursor-pointer"
             pointerEvents="visible"
             d="M673.511 370h2.021c.403.065.813.123 1.209.202 3.64.729 6.468 2.656 8.41 5.824 1.935 3.168 2.317 6.567 1.302 10.11-.604 2.115-1.69 4.02-2.877 5.853-2.281 3.507-5.159 6.48-8.353 9.157-.475.405-1.007.383-1.496-.028a49.1 49.1 0 01-4.569-4.345c-2.46-2.677-4.532-5.614-6.007-8.963-.647-1.465-1.05-2.98-1.137-4.582-.122-2.425.374-4.72 1.597-6.82 2-3.435 4.957-5.528 8.878-6.228.346-.057.684-.115 1.029-.18m.986 18.777c3.345-.007 6.057-2.735 6.057-6.09a6.084 6.084 0 00-6.057-6.091c-3.339-.022-6.087 2.742-6.072 6.105.014 3.363 2.733 6.084 6.072 6.076z"
