@@ -10,7 +10,7 @@ function Map() {
           GIZ Tanzania & EAC Map
         </h1>
         <div className="flex justify-center mx-10 ">
-          <Svg className="w-full md:mt-10" />
+          <Svg className="w-full"/>
         </div>
       </div>
       <div className="absolute bottom-20 md:bottom-10 ">
