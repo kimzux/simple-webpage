@@ -109,7 +109,7 @@ function SvgComponent(props) {
     <div className="relative">
       {showImage && location && (
         <div
-          class="min-w-[100px] pb-5 px-2 rounded-lg overflow shadow-lg bg-white md:overflow-hidden md:px-2"
+          class="min-w-[20px] pb-5 px-2 rounded-lg overflow shadow-lg bg-white md:overflow-hidden md:px-2"
           style={imageStyle}
         >
           <div class="p-2">
@@ -135,7 +135,7 @@ function SvgComponent(props) {
       {showDar && (
         <div className="relative">
           <div
-            class="bg-white rounded-lg shadow-lg p-4  w-1/2 absolute top-[50%] translate-x-[-50%] translate-y-[-50%] md:w-1/3"
+            class="min-w-[20px] bg-white rounded-lg shadow-lg p-4  w-1/2 absolute top-[50%] translate-x-[-50%] translate-y-[-50%] md:w-1/3"
             style={imageStyle}
           >
             <div class="border-b border-gray-200 pb-4 ">
