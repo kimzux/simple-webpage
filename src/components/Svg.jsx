@@ -57,7 +57,7 @@ function SvgComponent(props) {
     setLocation(card);
 
     let x = e.clientX * 0.7;
-    let y = e.clientY * 0.6;
+    let y = e.clientY * 1.5;
     setMousePosition({ x: x, y: y });
   };
   // const handleMouseLeave =() =>{
@@ -73,7 +73,7 @@ function SvgComponent(props) {
   const handleCursorOver = (e) => {
     setShowDar(true);
     let x = e.clientX * 0.98;
-    let y = e.clientY * 1.7;
+    let y = e.clientY * 1.8;
     setMousePosition({ x: x, y: y });
   };
 
@@ -205,7 +205,7 @@ function SvgComponent(props) {
           </div>
         </div>
       )}
-      {showTanga && (
+      {/* {showTanga && (
         <div className="relative">
           <div
             class="bg-white rounded-lg shadow-lg p-4 w-[70%] absolute top-[50%] translate-x-[-50%] translate-y-[-50%] md:w-1/3 "
@@ -241,7 +241,7 @@ function SvgComponent(props) {
             </div>
           </div>
         </div>
-      )}
+      )} */}
 
       <svg
         width={810}
