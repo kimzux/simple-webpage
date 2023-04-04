@@ -35,7 +35,7 @@ const cards = [
   {
     id: 5,
     title: "Health",
-    content: "Improve Health care provision",
+    content: "Improving Health care provision",
     link: "https://www.giz.de/en/worldwide/115017.html",
     color: "bg-[#349B89]",
     text: "text-[#349B89]",
@@ -56,7 +56,7 @@ function SvgComponent(props) {
     let card = cards.find((item) => item.id === id);
     setLocation(card);
 
-    let x = e.clientX * 0.7;
+    let x = e.clientX * 0.4;
     let y = e.clientY * 1.5;
     setMousePosition({ x: x, y: y });
   };
@@ -72,7 +72,7 @@ function SvgComponent(props) {
 
   const handleCursorOver = (e) => {
     setShowDar(true);
-    let x = e.clientX * 0.98;
+    let x = e.clientX * 0.94;
     let y = e.clientY * 1.8;
     setMousePosition({ x: x, y: y });
   };
@@ -143,7 +143,7 @@ function SvgComponent(props) {
                 Health
               </h3>
               <p class="text-gray-500 font-giz text-sm md:text-base">
-                Improve Health care provision
+                Improving health care provision
               </p>
               <a
                 href="https://www.giz.de/en/worldwide/81106.html"
@@ -154,7 +154,7 @@ function SvgComponent(props) {
             </div>
             <div class="border-b border-gray-200 py-4">
               <h3 class="font-giz text-base mb-2 md:text-lg text-[#28448F]">
-                Good governance Human Rights and Gender
+                Good Governance Human Rights and Gender
               </h3>
               
               <a
