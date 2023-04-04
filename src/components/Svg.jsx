@@ -55,7 +55,7 @@ function SvgComponent(props) {
     let card = cards.find((item) => item.id === id);
     setLocation(card);
 
-    let x = e.clientX * 0.5;
+    let x = e.clientX * 0.9;
     let y = e.clientY ;
     setMousePosition({ x: x, y: y });
   };
