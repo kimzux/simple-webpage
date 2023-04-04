@@ -154,16 +154,19 @@ function SvgComponent(props) {
             </div>
             <div class="border-b border-gray-200 py-4">
               <h3 class="font-giz text-base mb-2 md:text-lg text-[#28448F]">
-                Good governance Human Right and Gender
+                Good governance Human Rights and Gender
               </h3>
               
               <a
                 href="https://www.giz.de/en/worldwide/42511.html"
               
               >
-               <p class="text-gray-500 font-giz text-sm md:text-base underline">
+                <ul className=" list-disc ml-4 marker:text-[#28448F] ">
+                  <li> <p class="text-gray-500 font-giz text-sm md:text-base underline">
                 Promoting good financial governance SAFE- access to justice for women and girls 
-              </p>
+              </p></li>
+                </ul>
+              
               </a>
             </div>
             <div class=" border-b border-gray-200 py-4">
@@ -185,9 +188,13 @@ function SvgComponent(props) {
               <h3 class="font-giz text-base mb-2 md:text-lg text-[#6DCFF6]">
                 Water and Climate Change Adaptation
               </h3>
-              <p class="text-gray-500 font-giz text-sm md:text-base">
+              <ul className=" list-disc ml-4 marker:text-[#6DCFF6] ">
+                  <li>  <p class="text-gray-500 font-giz text-sm md:text-base">
                 water security and climate resilience in urban areas
               </p>
+              </li>
+                </ul>
+             
               <a
                 href="https://www.giz.de/en/worldwide/94029.html"
                 class="mt-2 inline-block bg-[#6DCFF6] hover:bg-blue-500 text-white text-sm px-4 py-2 rounded md:px-10"
