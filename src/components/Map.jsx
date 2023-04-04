@@ -1,6 +1,6 @@
 import React from "react";
 // import MapImage from '../assets/map.svg';
-import MapLeft from "../assets/left.svg";
+import MapLeft from "../assets/map2.svg";
 import Svg from "./Svg";
 function Map() {
   return (
@@ -12,6 +12,7 @@ function Map() {
         <div className="flex justify-center mx-10 ">
           <Svg className="w-full h-[70%] object-cover mt-10 md:h-full" />
         </div>
+   
       </div>
       <div className="absolute bottom-2 md:bottom-10 ">
         <img

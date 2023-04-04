@@ -56,8 +56,8 @@ function SvgComponent(props) {
     let card = cards.find((item) => item.id === id);
     setLocation(card);
 
-    let x = e.clientX * 0.6;
-    let y = e.clientY;
+    let x = e.clientX * 0.7;
+    let y = e.clientY * 0.6;
     setMousePosition({ x: x, y: y });
   };
   // const handleMouseLeave =() =>{
@@ -72,8 +72,8 @@ function SvgComponent(props) {
 
   const handleCursorOver = (e) => {
     setShowDar(true);
-    let x = e.clientX * 0.95;
-    let y = e.clientY;
+    let x = e.clientX * 0.98;
+    let y = e.clientY * 1.7;
     setMousePosition({ x: x, y: y });
   };
 
@@ -143,7 +143,7 @@ function SvgComponent(props) {
                 Health
               </h3>
               <p class="text-gray-500 font-giz text-sm md:text-base">
-                Improving Health care provision
+                Improve Health care provision
               </p>
               <a
                 href="https://www.giz.de/en/worldwide/81106.html"
@@ -183,10 +183,10 @@ function SvgComponent(props) {
             
             <div class=" py-4 ">
               <h3 class="font-giz text-base mb-2 md:text-lg text-[#6DCFF6]">
-                Water change
+                Water and Climate Change Adaptation
               </h3>
               <p class="text-gray-500 font-giz text-sm md:text-base">
-                Improving Health care provision
+                water security and climate resilience in urban areas
               </p>
               <a
                 href="https://www.giz.de/en/worldwide/94029.html"
