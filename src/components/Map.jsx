@@ -10,7 +10,7 @@ function Map() {
           GIZ Tanzania & EAC Map
         </h1>
         <div className="flex justify-center mx-10 ">
-          <Svg className="w-full h-[70%] object-cover mt-10 md:h-full" />
+          <Svg className="w-full h-[80%] object-cover mt-10 md:h-full" />
         </div>
    
       </div>
@@ -18,7 +18,7 @@ function Map() {
         <img
           src={MapLeft}
           alt="my profile"
-          className=" w-[160px] md:w-[60%] mx-10 md:mx-20"
+          className=" w-[120px] md:w-[60%] mx-10 md:mx-20"
         />
       </div>
       <div class="border  border-[#C07029] mx-10 md:mt-20 md:mx-20"></div>
